@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Luckpub Game! Enjoy fair gameplay, VIP perks, and secure payments. See why players love this exciting platform.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://luckpub.com.pk/">
+    <title>Luckpub Game Features: Fair Play & Big Bonuses</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0c1a2d 0%, #1a3a5f 100%);
+            color: #f0f0f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: rgba(12, 26, 45, 0.95);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        header.scrolled {
+            padding: 15px 0;
+            background: rgba(12, 26, 45, 0.98);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 50px;
+            transition: transform 0.5s ease;
+        }
+        
+        .logo img:hover {
+            transform: scale(1.05);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: #f0f0f0;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            color: #4da6ff;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #4da6ff;
+            transition: width 0.3s ease;
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section with Parallax */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 120%;
+            background: url('https://images.unsplash.com/photo-1533106497176-45ae19e68ba2?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat fixed;
+            z-index: -1;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #4da6ff, #0066cc);
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 102, 204, 0.6);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: rgba(18, 35, 55, 0.9);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(45deg, #4da6ff, #0066cc);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.8;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: rgba(30, 50, 75, 0.7);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(45deg, #4da6ff, #0066cc);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #4da6ff;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #1a3a5f 0%, #0c1a2d 100%);
+        }
+        
+        .content-block {
+            background: rgba(30, 50, 75, 0.7);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .content-block h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #4da6ff;
+        }
+        
+        .content-block p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+        
+        .highlight {
+            color: #4da6ff;
+            font-weight: 600;
+        }
+        
+        /* Statistics Section */
+        .statistics {
+            padding: 80px 0;
+            background: rgba(18, 35, 55, 0.9);
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        
+        .stat-item {
+            margin: 20px;
+            animation: countUp 2s ease;
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4da6ff;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 1.2rem;
+            margin-top: 10px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1a3a5f 0%, #0c1a2d 100%);
+        }
+        
+        .cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0c1a2d;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: #4da6ff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #a0aec0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #4da6ff;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes countUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .mobile-nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 280px;
+                height: 100vh;
+                background: #0c1a2d;
+                padding: 80px 30px 30px;
+                transition: right 0.4s ease;
+                z-index: 999;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+            }
+            
+            .mobile-nav.active {
+                right: 0;
+            }
+            
+            .mobile-nav ul {
+                list-style: none;
+            }
+            
+            .mobile-nav ul li {
+                margin-bottom: 20px;
+            }
+            
+            .mobile-nav ul li a {
+                color: #f0f0f0;
+                text-decoration: none;
+                font-size: 1.2rem;
+                display: block;
+                padding: 10px 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .close-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                font-size: 24px;
+                color: #f0f0f0;
+                cursor: pointer;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                padding: 20px;
+            }
+            
+            .content-block {
+                padding: 25px;
+            }
+            
+            .stats-container {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 30px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <a href="https://luckpub.com.pk/">
+                        <img src="https://luckpub.com.pk/wp-content/uploads/2025/03/luckpub-game-1.webp" alt="Luckpub Game Logo">
+                    </a>
+                </div>
+                <div class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#content">Why Choose Us</a></li>
+                        <li><a href="#statistics">Stats</a></li>
+                        <li><a href="#join">Join Now</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#content">Why Choose Us</a></li>
+            <li><a href="#statistics">Stats</a></li>
+            <li><a href="#join">Join Now</a></li>
+        </ul>
+    </div>
+
+    <!-- Hero Section with Parallax -->
+    <section class="hero" id="home">
+        <div class="parallax-bg" id="parallaxBg"></div>
+        <div class="hero-content">
+            <h1>Luckpub Game: Fair Play & Exciting Bonuses</h1>
+            <p>Experience premium online gaming with guaranteed fairness, VIP rewards, and secure payments. Join thousands of players who trust the <a href="https://luckpub.com.pk/" style="color: #4da6ff; text-decoration: none;">Luckpub Game</a> platform for their entertainment.</p>
+            <a href="#features" class="cta-button">Explore Features</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Top 10 Features of Luckpub Game</h2>
+                <p>Discover what makes our platform the preferred choice for online gaming enthusiasts</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>1. Fair Gameplay Guaranteed</h3>
+                    <p>Our certified Random Number Generator (RNG) ensures every game outcome is completely random and fair. Independent experts regularly test our systems.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💻</div>
+                    <h3>2. Easy-to-Use Platform</h3>
+                    <p>Navigate effortlessly through our intuitively designed interface. Find games, manage your account, and access support with just a few clicks.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎮</div>
+                    <h3>3. Extensive Game Library</h3>
+                    <p>Choose from hundreds of games including poker, blackjack, slots, and instant-win games. New titles added regularly to keep the excitement fresh.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>4. Secure Payment Methods</h3>
+                    <p>Your financial safety is our priority. We use bank-level encryption and offer multiple trusted payment options including cards and e-wallets.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎁</div>
+                    <h3>5. Generous Welcome Bonus</h3>
+                    <p>New players receive a substantial bonus on their first deposit. Get extra funds to explore our games and increase your winning chances.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⭐</div>
+                    <h3>6. Rewarding VIP Program</h3>
+                    <p>Our loyalty program offers exclusive benefits including cashback, personal account managers, special gifts, and faster payouts for dedicated players.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>7. 24/7 Customer Support</h3>
+                    <p>Our friendly support team is available round the clock via live chat and email to resolve any issues quickly and efficiently.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>8. Mobile-Optimized Experience</h3>
+                    <p>Enjoy seamless gaming on any device. Our platform works perfectly on smartphones and tablets with responsive design and touch-friendly controls.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>9. Responsible Gaming Commitment</h3>
+                    <p>We provide tools to help you manage your gaming habits, including deposit limits and self-exclusion options, because your well-being matters.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>10. Regular Tournaments & Events</h3>
+                    <p>Compete against other players in exciting tournaments with substantial prize pools. Test your skills and climb the leaderboards for big rewards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="content-section" id="content">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Luckpub Game Stands Out</h2>
+                <p>Understanding what makes a great online gaming platform</p>
+            </div>
+            
+            <div class="content-block">
+                <h2>The Importance of Fair Play in Online Gaming</h2>
+                <p>The world of online games is big and exciting. For a new player, it can be hard to pick the right platform. You want a place that is fun, fair, and rewarding. This is where the <span class="highlight">Luckpub Game</span> platform stands out. It offers a complete experience for all kinds of players.</p>
+                <p>At the heart of any good game is trust. Players need to know that every game is honest and that they have a real chance to win. The <span class="highlight">Luckpub Game</span> platform makes this its number one rule. It uses a system called a "Random Number Generator" (RNG). Think of this as a digital roll of dice. It makes sure that every card dealt, every spin made, and every game result is completely random.</p>
+                <p>This system is tested by independent experts. This means no one, not even the platform, can guess or change the outcome. For you, this means pure, fair gameplay every time you log in. A study by the University of Nevada, Las Vegas, highlighted that the perception of fairness is a key factor in a player's decision to stay with an online platform. When players trust the system, they are more engaged and have a better overall experience.</p>
+            </div>
+            
+            <div class="content-block">
+                <h2>Security and Player Protection</h2>
+                <p>Putting money online can feel scary. <span class="highlight">Luckpub Game</span> uses advanced security to protect your financial details. It is like having a digital vault for your money. The platform offers many trusted payment methods. You can use credit cards, bank transfers, or popular e-wallets. Depositing money to play or cashing out your winnings is simple and, most importantly, safe.</p>
+                <p>A good gaming platform cares about its players. <span class="highlight">Luckpub Game</span> is committed to responsible gaming. It provides tools to help you stay in control. You can set limits on how much money you deposit or how long you play. There are also easy-to-find links to get professional help if gaming stops being fun. This shows that the platform values your well-being, not just your business.</p>
+            </div>
+            
+            <div class="content-block">
+                <h2>Rewards and VIP Benefits</h2>
+                <p>Who doesn't love a great welcome? New players on the platform are greeted with a generous bonus. This often means extra money added to your first deposit. For example, if you put in $50, the platform might give you an extra $50 to play with. This bonus gives you a bigger starting amount. It lets you explore more games and increases your chances of winning from the very beginning.</p>
+                <p>For the most loyal players, the <span class="highlight">Luckpub Game</span> experience gets even better. The VIP program is designed to reward you for your play. As you play games, you earn points and move up through different VIP levels. Each new level brings better perks. These can include higher cashback, a personal account manager, special gifts and offers, and faster payouts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics" id="statistics">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Players Trust Luckpub Game</h2>
+                <p>Our commitment to fairness and player satisfaction sets us apart in the industry</p>
+            </div>
+            <div class="stats-container">
+                <div class="stat-item">
+                    <span class="stat-number" data-count="98">0</span>
+                    <span class="stat-label">Player Satisfaction Rate</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="150">0</span>
+                    <span class="stat-label">Games Available</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="24">0</span>
+                    <span class="stat-label">/7 Support</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-count="100">0</span>
+                    <span class="stat-label">% RNG Certified</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="join">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Experience Premium Gaming?</h2>
+                <p>Join thousands of satisfied players who have made Luckpub Game their preferred gaming destination. Enjoy fair gameplay, exciting bonuses, and a secure environment designed with players in mind.</p>
+                <a href="https://luck-pub.netlify.app/" class="cta-button">Luck pub</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Luckpub Game</h3>
+                    <p>Your trusted platform for fair and exciting online gaming experiences with generous bonuses and VIP rewards.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#content">Why Choose Us</a></li>
+                        <li><a href="#statistics">Stats</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#help">Help Center</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#responsible">Responsible Gaming</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#cookies">Cookie Policy</a></li>
+                        <li><a href="#responsible">Game Integrity</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Luckpub Game. All rights reserved. | Designed for players who value fairness and excitement</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Parallax effect
+        window.addEventListener('scroll', function() {
+            const parallaxBg = document.getElementById('parallaxBg');
+            let scrollPosition = window.pageYOffset;
+            parallaxBg.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
+
+        // Mobile menu toggle
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileNav = document.getElementById('mobileNav');
+        const closeMenu = document.getElementById('closeMenu');
+
+        mobileMenu.addEventListener('click', function() {
+            mobileNav.classList.add('active');
+        });
+
+        closeMenu.addEventListener('click', function() {
+            mobileNav.classList.remove('active');
+        });
+
+        // Animate statistics counter
+        function animateCounter() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-count');
+                const count = +counter.innerText;
+                const increment = target / speed;
+                
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounter, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            });
+        }
+
+        // Initialize counter animation when in viewport
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounter();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        observer.observe(document.querySelector('.statistics'));
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    mobileNav.classList.remove('active');
+                }
+            });
+        });
+
+        // Feature card animation on scroll
+        const featureObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'fadeInUp 0.8s ease forwards';
+                    featureObserver.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            featureObserver.observe(card);
+        });
+    </script>
+</body>
+</html>
